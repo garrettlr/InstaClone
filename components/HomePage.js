@@ -12,8 +12,11 @@ export default class HomePage extends Component {
 
   render() {
     return (
-      <div>
+      <div className={`${styles.main}`}>
         <div className={`${styles.login}`}>
+          <div id={`${styles.titlebox}`}>
+            <img id={styles.title} src = "instagram-1.svg" />
+          </div>
           <input
             className={`${styles.input}`}
             placeholder="Username"

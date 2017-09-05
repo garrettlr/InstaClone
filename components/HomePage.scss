@@ -1,11 +1,40 @@
+@import './variables.scss';
+
+.main {
+  height: auto;
+  margin: auto;
+  background-color: $background-color-primary;
+}
 .login {
-  background-color: black;
-  width: 500px;
-  height: 500px;
+  margin: auto;
+  width: 350px;
+  height: auto;
+  border: 1px solid #e6e6e6;
+  border-radius: 1px;
+  background-color: white;
+}
+
+#titlebox {
+  width: 300px;
+  height: 60px;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+#title {
+  height: inherit;
+  width: inherit;
 }
 
 .input {
-  background-color: white;
-  width: 200px;
-  height: 40px;
+  display: block;
+  margin: auto;
+  margin-bottom: 6px;
+  width: 268px;
+  text-align: center;
+  height: inherit;
+  padding: 9px 8px 7px;
+  border: 1px solid $border;
+  border-radius: 3px;
+  outline: none;
 }
