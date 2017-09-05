@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './HomePage.scss';
-console.log('styles: ', styles);
 
 
 export default class HomePage extends Component {
@@ -15,7 +14,7 @@ export default class HomePage extends Component {
       <div className={styles.main}>
         <div className={styles.login}>
           <div id={styles.titlebox}>
-            <img id={styles.title} src = "instagram-1.svg" />
+            <img id={styles.title} src='instagram-1.svg' />
           </div>
           <input
             className={styles.input}

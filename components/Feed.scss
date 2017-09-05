@@ -1,0 +1,48 @@
+@import './variables.scss';
+
+.container {
+  width: 100vw;
+  height: 100vw;
+  background-color: $background-color-primary;
+}
+.headerBar {
+ width: 100vw;
+ height: 75px;
+ border-bottom: 1px solid $border;
+ background-color: white;
+}
+
+.headerLogos {
+  height: inherit;
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  padding-top: 20px;
+  margin-bottom: 10px;
+  margin-right: 100px;
+}
+
+.iconsbox{
+  display: inline-block;
+  float: right;
+  margin-right: 190px;
+  margin-top: 25px;
+  list-style: none;
+}
+
+.insta {
+
+  height: 40px;
+  width: 150px;
+  display: inline-block;
+
+}
+
+.logo {
+  height: 35px;
+  width: 65px;
+  display: inline-block;
+  border-right: 1px solid black;
+  padding-right: 30px;
+}
