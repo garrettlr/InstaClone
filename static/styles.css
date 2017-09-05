@@ -3,6 +3,7 @@ html {
   width: 100vw;
   background-color: #fafafa;
   margin: 0px;
+  overflow-y: hidden;
 }
 
 body {
