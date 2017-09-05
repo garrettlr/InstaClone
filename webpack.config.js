@@ -18,7 +18,7 @@ module.exports = {
   },
 
   module: {
-    loaders: [
+    rules: [
       {
         test: /(\.js|\.jsx)$/,
         loader: 'babel-loader',
@@ -29,8 +29,39 @@ module.exports = {
         include: __dirname,
       },
       {
-        test: /(\.css|.scss)$/,
-        loaders: ['style-loader', 'css-loader', 'sass-loader'],
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[name]__[local]__[hash:base64:5]',
+            }
+          },
+        ]
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              sourceMap: true,
+              importLoaders: 1,
+              localIdentName: '[name]__[local]__[hash:base64:5]',
+            }
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
       },
     ]
   },

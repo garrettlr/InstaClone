@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './HomePage.scss';
+console.log('styles: ', styles);
+
 
 export default class HomePage extends Component {
   constructor (props) {
@@ -11,15 +13,15 @@ export default class HomePage extends Component {
   render() {
     return (
       <div>
-        <div className={styles.login}>
+        <div className={`${styles.login}`}>
           <input
-            classname={styles.uname}
+            className={`${styles.input}`}
             placeholder="Username"
             type="text"
             >
             </input>
           <input
-            classname={styles.pword}
+            className={`${styles.input}`}
             placeholder="Password"
             type="password"
             >
