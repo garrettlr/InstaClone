@@ -4,12 +4,16 @@
   width: 100vw;
   height: 100vw;
   background-color: $background-color-primary;
+  overflow-y: scroll;
 }
 .headerBar {
  width: 100vw;
  height: 75px;
  border-bottom: 1px solid $border;
  background-color: white;
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
 }
 
 .headerLogos {
@@ -20,19 +24,10 @@
   flex-direction: row;
   padding-top: 20px;
   margin-bottom: 10px;
-  margin-right: 100px;
-}
-
-.iconsbox{
-  display: inline-block;
-  float: right;
-  margin-right: 190px;
-  margin-top: 25px;
-  list-style: none;
+  margin-left: 100px;
 }
 
 .insta {
-
   height: 40px;
   width: 150px;
   display: inline-block;
@@ -41,8 +36,184 @@
 
 .logo {
   height: 35px;
-  width: 65px;
+  width: 55px;
   display: inline-block;
   border-right: 1px solid black;
-  padding-right: 30px;
+  padding-right: 20px;
+}
+
+.searchBar {
+  display: inline-block;
+  width: 220px;
+  margin: auto;
+  margin-left: 80px;
+}
+
+#searchField {
+  border: 1px solid #e6e6e6;
+  background-color: #fafafa;
+  color: $fontColor;
+  text-align: center;
+  font-weight: 200;
+  width: 100%;
+  border-radius: 3px;
+  height: 28px;
+  outline: none;
+  margin-top: 25px;
+  display: inline-block;
+}
+
+.glass{
+  display: inline-block;
+  position: relative;
+  top: -23px;
+  left: 60px;
+  color: #dbdbdb;
+}
+
+.icons{
+  display: inline-block;
+  width: 500px;
+  margin-right: -200px;
+  margin-top: 25px;
+  list-style: none;
+}
+
+.iconslist{
+  text-decoration: none;
+  list-style: none;
+  display: inline-block;
+  width: 500px;
+}
+
+.pic {
+  height: 25px;
+  width: 25px;
+  border: 1px solid black;
+  border-radius: 100%;
+  display: inline-block;
+  margin-right: 25px;
+}
+.uname {
+  display: inline-block;
+  height: 25px;
+  margin-top: -50px;
+}
+
+.userName {
+  font-size: 16px;
+  font-weight: bold;
+  color: black;
+}
+
+.fa-heart{
+  -webkit-text-fill-color: red;
+}
+.fa-heart:hover{
+  cursor: pointer;
+   -webkit-text-fill-color: red;
+}
+.fa-heart-o:hover{
+  cursor: pointer;
+   -webkit-text-fill-color: red;
+}
+
+.fa-comment-o:hover{
+  cursor: pointer;
+}
+
+.poster{
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  display: inline-block;
+  margin-left: 15px;
+  margin-top: -7px;
+}
+
+.postername{
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 25px;
+}
+
+.feedbox {
+  border: 1px solid $border;
+  background-color: white;
+}
+
+.imgbox{
+  margin: auto;
+}
+
+.imgbox img{
+  min-width: 598px;
+}
+.bottom {
+  border-top: .5px solid #e6e6e6;
+}
+.bottom p {
+  display: block;
+}
+
+.buttonbox{
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.likesbox{
+  margin-left: 10px;
+}
+.likes {
+  
+}
+
+.noLikes{
+  font-weight: bold;
+}
+
+.fa {
+  height: 35px;
+  width: 35px;
+  font-size: 20px;
+}
+.commentsbox{
+  margin-left: 10px;
+}
+.commentor {
+  font-weight: bold;
+  display: inline-block;
+}
+
+.half-rule {
+  width: 97%;
+  margin-left: 0;
+}
+
+.fa-comment{
+  display: inline-block;
+  float: right;
+  z-index: 999999999999;
+}
+
+.newcomment{
+  border: none;
+  outline: none;
+  text-align: left;
+  width: 80%;
+  display: inline-block;
+}
+
+.addcomment{
+  margin-bottom: 10px;
+}
+
+.masthead {
+  width: 100vw;
+  height: auto;
+}
+.postcontainer{
+  width: 600px;
+  margin-top: 60px;
+  overflow-y: scroll;
 }

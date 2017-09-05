@@ -12,18 +12,18 @@ export default class Header extends Component {
       <header className={`${styles.headerBar}`}>
         <div className={styles.headerLogos}>
           <img src='logo.jpg' className={styles.logo} />
-          <img id='insta' className={`${styles.insta}`} src='instagram-1.svg' />
+          <img className={`${styles.insta}`} src='instagram-1.svg' />
         </div>
 
         <div className={styles.searchBar}>
           <input id ={styles.searchField} placeholder="Search"/>
-          <i className={styles.i} aria-hidden="false"></i>
+          <i className={`${styles.glass} fa fa-search`} aria-hidden="false"></i>
         </div>
 
         <div className={styles.icons}>
-          <ul className={`${bootstrap['bs-docs-nav']} ${bootstrap['navbar-nav']} iconslist`}>
-            <li className ={styles.pic}></li>
-            <li><p className ={styles.UserName}></p></li>
+          <ul className={styles.iconslist}>
+            <li className={styles.pic}></li>
+            <li className={styles.uname}><p className ={styles.userName}> glevy__</p></li>
           </ul>
         </div>
       </header>
@@ -31,5 +31,3 @@ export default class Header extends Component {
 
   }
 }
-
-//`${fa.fa} ${fa-search}`
