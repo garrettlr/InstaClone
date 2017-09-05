@@ -1,15 +1,25 @@
 import React from 'react';
 import styles from './Feed.scss';
 import bootstrap from './bootstrap/bootstrap.css';
-
+import Comment from './Comment'
 
 export default (props) => {
-  const { likes, comments, like, postNo } = props;
+  const { likes, comments, like, postNo, handleComment, liked } = props;
+  const commentsJSX = comments.map((comment) => {
+    return <Comment
+      key={`${comment.comment} ${comment.commentor}`}
+      commentor={comment.commentor}
+      comment={comment.comment}
+    />
+  });
+
+  const likedClass = liked ?  `fa fa-heart fa-2x ${styles.liked}`: "fa fa-heart-o fa-2x unliked heart";
+
   return (
     <div className={styles.bottom}>
       <div className={styles.buttonbox}>
         <i
-          className={"fa fa-heart-o fa-2x unliked heart"}
+          className={`${likedClass}`}
           aria-hidden={"true"}
           onClick={()=>like(postNo)}
           >
@@ -27,9 +37,14 @@ export default (props) => {
         </p>
       </div>
       <div className={styles.commentsbox}>
+        {commentsJSX}
         <hr className={styles['half-rule']}></hr>
         <div className={styles.addcomment}>
-          <input className={styles.newcomment} placeholder={"Add a comment..."} />
+          <input
+            className={styles.newcomment}
+            placeholder={"Add a comment..."}
+            onKeyPress={(event)=>handleComment(event, postNo)}
+          />
         </div>
       </div>
     </div>

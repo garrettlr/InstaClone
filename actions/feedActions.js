@@ -15,10 +15,10 @@ export function increasePosts() {
   };
 }
 
-export function AddComment(comment) {
+export function AddComment(payload) {
   return {
     type: ADD_COMMENT,
-    comment,
+    payload,
   };
 }
 

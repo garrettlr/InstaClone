@@ -1,5 +1,6 @@
 import { ADD_DATA_AJAX, INCREASE_POSTS, ADD_COMMENT, LIKE } from '../actions/feedActions';
-import addLike from './feedFunctions';
+import addLike from './feedFunctions/addLikes';
+import addComment from './feedFunctions/addComment';
 const feedDefault = [
   {
     poster: 'glevy__',
@@ -7,6 +8,7 @@ const feedDefault = [
     postImg: 'https://scontent-lax3-2.cdninstagram.com/t51.2885-15/e35/13413424_1003508109727031_73332017_n.jpg',
     comments: [],
     likes: 2,
+    liked: false,
   },
   {
     poster: 'glevy__x',
@@ -14,6 +16,7 @@ const feedDefault = [
     postImg: 'https://scontent-lax3-2.cdninstagram.com/t51.2885-15/e35/13413424_1003508109727031_73332017_n.jpg',
     comments: [],
     likes: 2,
+    liked: true,
   }
 ]
 
@@ -24,7 +27,8 @@ const feed = (state = feedDefault, action) => {
     case INCREASE_POSTS:
       return state;
     case ADD_COMMENT:
-      return state;
+    console.log('adc: ', action);
+      return addComment(state, action.payload);
     case LIKE:
       return addLike(state, action.payload);
     default:

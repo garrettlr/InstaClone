@@ -9,14 +9,32 @@ import FeedBox from './FeedBox';
 export default class Feed extends Component {
   constructor(props) {
     super(props);
+    this.handleComment = this.handleComment.bind(this);
+  }
+
+  handleComment(event, postNo) {
+    if (event.key === 'Enter' && event.target.value.trim().length > 0){
+      const payload = {
+        postNo,
+        poster: 'glevy__',
+        comment: event.target.value,
+      }
+      console.log(payload);
+      this.props.AddComment(payload);
+      event.target.value = null;
+    }
+  }
+
+  handleLike(event) {
+    console.log(event);
   }
 
   render() {
 
-    const feed = this.props.feed.slice(0);
+    const feed = this.props.feed;
     const posts = feed.map((post, i) => {
-      const { poster, source, postImg, comments, likes } = post;
-      const { like, addComment } = this.props;
+      const { poster, source, postImg, comments, likes, liked } = post;
+      const { like } = this.props;
       return (
         <FeedBox
           key={i}
@@ -26,8 +44,9 @@ export default class Feed extends Component {
           postImg={postImg}
           comments={comments}
           likes={likes}
+          liked={liked}
           like={like}
-          addComment={addComment}
+          handleComment={this.handleComment}
         />
       );
     });
