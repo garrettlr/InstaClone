@@ -22,8 +22,9 @@ export function AddComment(comment) {
   };
 }
 
-export function like() {
+export function like(postNo) {
   return {
     type: LIKE,
+    payload: postNo
   };
 }

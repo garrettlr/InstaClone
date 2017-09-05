@@ -4,13 +4,7 @@ import { createHashHistory } from 'history';
 import { routerMiddleware, routerActions } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
 import rootReducer from '../reducers/index';
-// import * as tabActions from '../actions/tabs';
-// import * as CompListActions from '../actions/complist';
-// import * as workspaceActions from '../actions/workspace';
-// import * as configActions from '../actions/config';
-// import * as FileSystemActions from '../actions/FileSystemActions';
-// import * as methods from '../actions/methods';
-// import type { tabStateType } from '../reducers/tabs';
+import * as feedActions from '../actions/feedActions';
 
 const history = createHashHistory();
 
@@ -37,6 +31,7 @@ const configureStore = (initialState) => {
   //devTools
   const actionCreators = {
     ...routerActions,
+    ...feedActions,
   };
 
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__

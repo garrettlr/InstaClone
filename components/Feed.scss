@@ -2,7 +2,7 @@
 
 .container {
   width: 100vw;
-  height: 100vw;
+  height: auto;
   background-color: $background-color-primary;
   overflow-y: scroll;
 }
@@ -140,11 +140,13 @@
 .postbox {
   display: flex;
   justify-content: center;
+  margin-top: 60px;
 }
 
 .feedbox {
   border: 1px solid $border;
   background-color: white;
+  display: block !important;
   padding: 0px !important;
 }
 
@@ -217,9 +219,9 @@
 .masthead {
   width: 100vw;
   height: auto;
+  // overflow-y: scroll;
 }
 .postcontainer{
   width: 600px;
-  margin-top: 60px;
-  overflow-y: scroll;
+  // overflow-y: scroll;
 }
