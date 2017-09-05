@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux';
 import { routerReducer as router } from 'react-router-redux';
-// import tabs from './tabs';
-// import workspace from './workspace/index';
-// import availableComponents from './complist';
+import feedReducer from './feedReducer';
+
 
 const rootReducer = combineReducers({
   router,
+  feedReducer,
 });
 
 export default rootReducer;

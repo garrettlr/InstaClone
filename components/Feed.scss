@@ -137,17 +137,23 @@
   margin-top: 25px;
 }
 
+.postbox {
+  display: flex;
+  justify-content: center;
+}
+
 .feedbox {
   border: 1px solid $border;
   background-color: white;
+  padding: 0px !important;
 }
 
 .imgbox{
-  margin: auto;
+  margin: 0px;
 }
 
 .imgbox img{
-  min-width: 598px;
+  // min-width: 598px;
 }
 .bottom {
   border-top: .5px solid #e6e6e6;
@@ -165,7 +171,7 @@
   margin-left: 10px;
 }
 .likes {
-  
+
 }
 
 .noLikes{
