@@ -1,13 +1,15 @@
 @import './variables.scss';
 
 .main {
-  height: auto;
+  height: 100vh;
   margin: auto;
-  margin-top: 200px;
+
   background-color: $background-color-primary;
+  overflow-y: hidden;
 }
 .login {
   margin: auto;
+  margin-top: 200px;
   width: 350px;
   height: auto;
   border: 1px solid #e6e6e6;

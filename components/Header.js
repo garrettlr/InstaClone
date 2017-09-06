@@ -23,7 +23,7 @@ export default class Header extends Component {
 
         <div className={styles.icons}>
           <ul className={styles.iconslist}>
-            <li className={styles.pic}></li>
+            <li className={styles.pic}> <img className={styles.pic} src ='https://scontent-lax3-2.cdninstagram.com/t51.2885-19/s320x320/13388521_1100683993327133_825464093_a.jpg'/></li>
             <li className={styles.uname}><p className ={styles.userName}> glevy__</p></li>
           </ul>
         </div>

@@ -11,14 +11,6 @@ const feedDefault = [
     likes: 2,
     liked: false,
   },
-  {
-    poster: 'glevy__x',
-    source: 'https://scontent-lax3-2.cdninstagram.com/t51.2885-19/s320x320/13388521_1100683993327133_825464093_a.jpg',
-    postImg: 'https://scontent-lax3-2.cdninstagram.com/t51.2885-15/e35/13413424_1003508109727031_73332017_n.jpg',
-    comments: [],
-    likes: 2,
-    liked: true,
-  }
 ]
 
 const feed = (state = feedDefault, action) => {
