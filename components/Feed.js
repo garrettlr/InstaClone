@@ -14,14 +14,14 @@ export default class Feed extends Component {
 
   handleComment(event, postNo) {
     if (event.key === 'Enter'){
-      this.props.AddCommentThunk(postNo, event.target.value);
+      this.props.addCommentThunk(postNo, event.target.value);
       event.target.value = null;
     }
   }
 
   render() {
     const feed = this.props.feed;
-    
+
     const posts = feed.map((post, i) => {
       const { poster, source, postImg, comments, likes, liked } = post;
       const { like } = this.props;

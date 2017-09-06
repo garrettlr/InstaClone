@@ -68,14 +68,14 @@ export function scroll(target) {
 
 }
 
-export function AddComment(payload) {
+export function addComment(payload) {
   return {
     type: ADD_COMMENT,
     payload,
   };
 }
   // adds a comment if it exists
-export function AddCommentThunk(postNo, comment) {
+export function addCommentThunk(postNo, comment) {
   return dispatch => {
     if (comment.trim().length > 0) {
       const payload = {
@@ -83,7 +83,7 @@ export function AddCommentThunk(postNo, comment) {
         poster:'glevy__',
         comment
       }
-      dispatch(AddComment(payload));
+      dispatch(addComment(payload));
     } else {
       return;
     }

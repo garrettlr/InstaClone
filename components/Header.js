@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import styles from './Feed.scss';
-import bootstrap from './bootstrap/bootstrap.css';
 
 export default class Header extends Component {
   constructor(props) {
