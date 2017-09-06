@@ -51,9 +51,21 @@ function addData(payload) {
 }
 
 export function addDataAjax() {
+  return dispatch => getPosts(url, dispatch);
+}
+  // dispatches ajax ac if post container at full scroll
+export function scroll(target) {
   return dispatch => {
-    getPosts(url, dispatch);
+    const scrollHeight = target.scrollHeight;
+    const scrollTop = target.scrollTop;
+    const clientHeight = target.clientHeight;
+
+    if (scrollHeight - scrollTop === clientHeight) {
+      dispatch(addDataAjax());
+    }
+    return;
   }
+
 }
 
 export function AddComment(payload) {
@@ -61,6 +73,22 @@ export function AddComment(payload) {
     type: ADD_COMMENT,
     payload,
   };
+}
+  // adds a comment if it exists
+export function AddCommentThunk(postNo, comment) {
+  return dispatch => {
+    if (comment.trim().length > 0) {
+      const payload = {
+        postNo,
+        poster:'glevy__',
+        comment
+      }
+      dispatch(AddComment(payload));
+    } else {
+      return;
+    }
+  }
+
 }
 
 export function like(postNo) {

@@ -10,34 +10,18 @@ export default class Feed extends Component {
   constructor(props) {
     super(props);
     this.handleComment = this.handleComment.bind(this);
-    this.handleScroll = this.handleScroll.bind(this);
   }
 
   handleComment(event, postNo) {
-    if (event.key === 'Enter' && event.target.value.trim().length > 0){
-      const payload = {
-        postNo,
-        poster: 'glevy__',
-        comment: event.target.value,
-      }
-      this.props.AddComment(payload);
+    if (event.key === 'Enter'){
+      this.props.AddCommentThunk(postNo, event.target.value);
       event.target.value = null;
     }
   }
 
-  handleScroll(event) {
-    const scrollHeight = event.currentTarget.scrollHeight;
-    const scrollTop = event.currentTarget.scrollTop;
-    const clientHeight = event.currentTarget.clientHeight;
-    if (scrollHeight - scrollTop === clientHeight) {
-      // ajax call.
-      this.props.addDataAjax();
-    }
-  }
-
   render() {
-
     const feed = this.props.feed;
+    
     const posts = feed.map((post, i) => {
       const { poster, source, postImg, comments, likes, liked } = post;
       const { like } = this.props;
@@ -64,7 +48,7 @@ export default class Feed extends Component {
         <div className={styles.masthead}>
           <div
             className={`${styles.postcontainer} ${bootstrap.container}`}
-            onScroll={(event)=>this.handleScroll(event)}
+            onScroll={(event)=>this.props.scroll(event.target)}
           >
               {posts}
           </div>

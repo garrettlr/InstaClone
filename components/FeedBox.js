@@ -3,7 +3,7 @@ import styles from './Feed.scss';
 import bootstrap from './bootstrap/bootstrap.css';
 import FeedHeader from './FeedHeader';
 import FeedFooter from './FeedFooter';
-
+import FeedImg from './FeedImg';
 export default (props) => {
   const { poster, source, postImg, comments, likes, like, liked, handleComment, postNo } = props;
   return (
@@ -15,9 +15,9 @@ export default (props) => {
           source={source}
         />
 
-        <div className={styles.imgbox}>
-          <img className = {bootstrap['img-responsive']} src={postImg} />
-        </div>
+        <FeedImg
+          postImg={postImg}
+        />
 
         <FeedFooter
           likes={likes}
