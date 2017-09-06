@@ -11,19 +11,26 @@ export default (props) => {
     comment={comment.comment}
   />));
 
-  const likedClass = liked ? `fa fa-heart fa-2x ${styles.liked}` : 'fa fa-heart-o fa-2x unliked heart';
+  const likedClass = liked ? `fa fa-heart fa-2x ${styles.liked} ${styles.heart}` : `fa fa-heart-o fa-2x ${styles.unliked} ${styles['heart-o']}`;
 
+  // set focus on comment input when bubble is clicked
+  let commentInput = null;
+  const handleClick = () => {
+    commentInput.focus();
+  }
   return (
     <div className={styles.bottom}>
       <div className={styles.buttonbox}>
         <i
-          className={`${likedClass}`}
+          className={likedClass}
           aria-hidden={'true'}
           onClick={() => like(postNo)}
         />
         <i
-          className={'fa fa-comment-o fa-2x'}
+          className={`fa fa-comment-o fa-2x ${styles.comment}`}
           aria-hidden={'true'}
+          onClick={handleClick}
+
         />
       </div>
       <div className={styles.likesbox}>
@@ -40,6 +47,7 @@ export default (props) => {
             className={styles.newcomment}
             placeholder={'Add a comment...'}
             onKeyPress={(event) => handleComment(event, postNo)}
+            ref={(input) => { commentInput = input; }}
           />
         </div>
       </div>

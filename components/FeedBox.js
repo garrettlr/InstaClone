@@ -18,6 +18,8 @@ export default (props) => {
 
         <FeedImg
           postImg={postImg}
+          postNo={postNo}
+          like={like}
         />
 
         <FeedFooter

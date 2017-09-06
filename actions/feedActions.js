@@ -74,11 +74,12 @@ export function addComment(payload) {
 // adds a comment if it exists
 export function addCommentThunk(postNo, comment) {
   return dispatch => {
-    if (comment.trim().length > 0) {
+    const cleanComment = comment.trim();
+    if (cleanComment.length > 0) {
       const payload = {
         postNo,
         poster: 'glevy__',
-        comment
+        comment: cleanComment,
       };
       dispatch(addComment(payload));
     } else {

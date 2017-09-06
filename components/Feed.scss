@@ -121,19 +121,24 @@
   color: black;
 }
 
-.fa-heart{
+.heart{
   -webkit-text-fill-color: red;
+  margin-right: 5px;
 }
-.fa-heart:hover{
+
+.heart-o {
+  margin-right: 5px;
+}
+.heart:hover{
   cursor: pointer;
    -webkit-text-fill-color: red;
 }
-.fa-heart-o:hover{
+.heart-o:hover{
   cursor: pointer;
    -webkit-text-fill-color: red;
 }
 
-.fa-comment-o:hover{
+.comment:hover{
   cursor: pointer;
 }
 
@@ -177,7 +182,7 @@
    min-width: 583px;
 }
 .bottom {
-  border-top: .5px solid #e6e6e6;
+  border-top: .5px solid $border;
 }
 .bottom p {
   display: block;
@@ -192,7 +197,7 @@
   margin-left: 10px;
 }
 .likes {
-
+ // applies a classname to a p tag for convienence
 }
 
 .liked {
