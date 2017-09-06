@@ -15,6 +15,6 @@ const addPosts = (state, payload) => {
 
   return newState;
 }
-//583px
+
 
 export default addPosts

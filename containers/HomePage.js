@@ -5,12 +5,12 @@ import HomePage from '../components/HomePage';
 //
 // function mapStateToProps(state) {
 //   return {
-//     username: state.user.username,
+//     user: state.user;
 //   }
 // }
 //
 // function mapDispatchToProps(dispatch) {
-//   return bindActionCreators({ LoginActions}, dispatch);
+//   return bindActionCreators({LoginActions}, dispatch);
 // }
 //
 // export default connect(mapStateToProps, mapDispatchToProps)(HomePage);

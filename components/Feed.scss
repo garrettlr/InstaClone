@@ -2,10 +2,25 @@
 
 .container {
   width: 100vw;
-  height: auto;
+  height: 100vh;
   background-color: $background-color-primary;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.masthead {
+  width: 100vw;
+  height: 98vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.postcontainer{
+  width: 600px;
+  max-height: 100vh;
   overflow-y: scroll;
 }
+
 .headerBar {
  width: 100vw;
  height: 75px;
@@ -150,6 +165,10 @@
   padding: 0px !important;
 }
 
+.postbox:last-child {
+  margin-bottom: 150px;
+}
+
 .imgbox{
   margin: 0px;
 }
@@ -218,14 +237,4 @@
 
 .addcomment{
   margin-bottom: 10px;
-}
-
-.masthead {
-  width: 100vw;
-  height: auto;
-  // overflow-y: scroll;
-}
-.postcontainer{
-  width: 600px;
-  // overflow-y: scroll;
 }

@@ -1,4 +1,4 @@
-import { ADD_DATA_AJAX, INCREASE_POSTS, ADD_COMMENT, LIKE } from '../actions/feedActions';
+import { ADD_DATA_AJAX, ADD_COMMENT, LIKE } from '../actions/feedActions';
 import addLike from './feedFunctions/addLikes';
 import addComment from './feedFunctions/addComment';
 import addPosts from './feedFunctions/addPosts';
@@ -25,10 +25,7 @@ const feed = (state = feedDefault, action) => {
   switch (action.type) {
     case ADD_DATA_AJAX:
       return addPosts(state, action.payload);
-    case INCREASE_POSTS:
-      return state;
     case ADD_COMMENT:
-    console.log('adc: ', action);
       return addComment(state, action.payload);
     case LIKE:
       return addLike(state, action.payload);

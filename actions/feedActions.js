@@ -1,11 +1,11 @@
-import thunk from 'redux-thunk';
-
 
 export const ADD_DATA_AJAX = 'ADD_DATA_AJAX';
 export const INCREASE_POSTS = 'INCREASE_POSTS';
 export const ADD_COMMENT = 'ADD_COMMENT';
 export const LIKE = 'LIKE';
-const url = 'https://codesmith-precourse.firebaseio.com/instagram/-JqL35o8u6t3dTQaFXSV.json'
+
+// url for AJAX
+const url = 'https://codesmith-precourse.firebaseio.com/instagram/-JqL35o8u6t3dTQaFXSV.json';
 
 function getPosts(url, dispatch) {
   let xhr = new XMLHttpRequest();
@@ -54,12 +54,6 @@ export function addDataAjax() {
   return dispatch => {
     getPosts(url, dispatch);
   }
-}
-
-export function increasePosts() {
-  return {
-    type: INCREASE_POSTS,
-  };
 }
 
 export function AddComment(payload) {
