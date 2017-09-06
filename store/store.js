@@ -9,26 +9,25 @@ import * as feedActions from '../actions/feedActions';
 const history = createHashHistory();
 
 const configureStore = (initialState) => {
-
   const middleware = [];
   const enhancers = [];
 
-  //thunk
+  // thunk
   middleware.push(thunk);
 
-  //logger
+  // logger
   const logger = createLogger({
     level: 'info',
     collapsed: true
   });
   middleware.push(logger);
 
-  //router
+  // router
 
   const router = routerMiddleware(history);
   middleware.push(router);
 
-  //devTools
+  // devTools
   const actionCreators = {
     ...routerActions,
     ...feedActions,
@@ -45,7 +44,7 @@ const configureStore = (initialState) => {
 
   const enhancer = composeEnhancers(...enhancers);
 
-  //initStore
+  // initStore
 
   const store = createStore(rootReducer, initialState, enhancer);
 
@@ -55,6 +54,6 @@ const configureStore = (initialState) => {
 const storeSetup = {
   configureStore,
   history,
-}
+};
 
 export default storeSetup;

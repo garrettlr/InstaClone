@@ -4,6 +4,7 @@ import bootstrap from './bootstrap/bootstrap.css';
 import FeedHeader from './FeedHeader';
 import FeedFooter from './FeedFooter';
 import FeedImg from './FeedImg';
+
 export default (props) => {
   const { poster, source, postImg, comments, likes, like, liked, handleComment, postNo } = props;
   return (
@@ -27,11 +28,11 @@ export default (props) => {
           comments={comments}
           handleComment={handleComment}
         />
-    </div>
+      </div>
     </div>
 
   );
-}
+};
 
 
-//36-62;
+// 36-62;

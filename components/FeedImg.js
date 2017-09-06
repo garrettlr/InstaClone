@@ -6,7 +6,7 @@ export default (props) => {
   const { postImg } = props;
   return (
     <div className={styles.imgbox}>
-      <img className = {bootstrap['img-responsive']} src={postImg} />
+      <img className={bootstrap['img-responsive']} src={postImg} />
     </div>
   );
-}
+};

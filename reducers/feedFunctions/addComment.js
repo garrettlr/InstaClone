@@ -5,12 +5,12 @@ const addComment = (state, payload) => {
   const newComment = {
     comment: payload.comment,
     commentor: payload.poster,
-  }
+  };
   newComments.push(newComment);
   newPost.comments = newComments;
   newState[payload.postNo] = newPost;
   return newState;
-}
+};
 
 
 export default addComment;

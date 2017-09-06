@@ -7,9 +7,9 @@ export default (props) => {
   const { poster, source } = props;
 
   return (
-    <div className={"header"}>
+    <div className={'header'}>
       <img className={styles.poster} src={source} />
       <p className={styles.postername}>{poster}</p>
     </div>
   );
-}
+};

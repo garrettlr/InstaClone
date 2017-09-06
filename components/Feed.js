@@ -13,7 +13,7 @@ export default class Feed extends Component {
   }
 
   handleComment(event, postNo) {
-    if (event.key === 'Enter'){
+    if (event.key === 'Enter') {
       this.props.addCommentThunk(postNo, event.target.value);
       event.target.value = null;
     }
@@ -48,9 +48,9 @@ export default class Feed extends Component {
         <div className={styles.masthead}>
           <div
             className={`${styles.postcontainer} ${bootstrap.container}`}
-            onScroll={(event)=>this.props.scroll(event.target)}
+            onScroll={(event) => this.props.scroll(event.target)}
           >
-              {posts}
+            {posts}
           </div>
         </div>
 
