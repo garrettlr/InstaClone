@@ -1,6 +1,7 @@
 import { ADD_DATA_AJAX, INCREASE_POSTS, ADD_COMMENT, LIKE } from '../actions/feedActions';
 import addLike from './feedFunctions/addLikes';
 import addComment from './feedFunctions/addComment';
+import addPosts from './feedFunctions/addPosts';
 const feedDefault = [
   {
     poster: 'glevy__',
@@ -23,7 +24,7 @@ const feedDefault = [
 const feed = (state = feedDefault, action) => {
   switch (action.type) {
     case ADD_DATA_AJAX:
-      return state;
+      return addPosts(state, action.payload);
     case INCREASE_POSTS:
       return state;
     case ADD_COMMENT:
