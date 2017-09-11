@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import styles from './Feed.scss';
-import bootstrap from './bootstrap/bootstrap.css';
 
 type Props = {
   poster: string,
@@ -13,7 +12,7 @@ const FeedHeader = (props: Props) => {
 
   return (
     <div className={'header'}>
-      <img className={styles.poster} src={source} />
+      <img className={styles.poster} src={source} alt={'user\'s profile pic'} />
       <p className={styles.postername}>{poster}</p>
     </div>
   );

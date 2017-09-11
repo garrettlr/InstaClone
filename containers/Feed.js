@@ -5,14 +5,14 @@ import Feed from '../components/Feed';
 
 import * as FeedActions from '../actions/feedActions';
 
-function mapStateToProps(state) {
+function mapStateToProps(state: {}) {
   return {
     feed: state.feed,
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators(FeedActions, dispatch);
+function mapDispatchToProps(dispatch: () => void) {
+  return bindActionCreators(FeedActions : {}, dispatch: () => void);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Feed);
+export default connect(mapStateToProps: () => void, mapDispatchToProps: ()=> void)(Feed);

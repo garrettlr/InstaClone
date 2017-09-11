@@ -1,35 +1,38 @@
 // @flow
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import styles from './Feed.scss';
 import bootstrap from './bootstrap/bootstrap.css';
 import Header from './Header';
 import FeedBox from './FeedBox';
 
 export default class Feed extends Component {
-  handleComment = (event, postNo) => {
-    if (event.key === 'Enter') {
-      this.props.addCommentThunk(postNo, event.target.value);
-      event.target.value = null;
-    }
-  }
-
   props: {
     feed: [],
     like: () => void,
     addCommentThunk: () => void,
     scroll: () => void,
   }
+  /* eslint-disable no-param-reassign */
+  handleComment = (event, postNo) => {
+    if (event.key === 'Enter') {
+      this.props.addCommentThunk(postNo, event.target.value);
+      event.target.value = null;
+    }
+  }
+  /* eslint-enable */
+
 
   render() {
     const feed = this.props.feed;
-
+    /* eslint-disable react/no-array-index-key */
+    // no solid choice for unique keys except index, due to data shape.
+    // acceptable for this simple demo case only.
     const posts = feed.map((post, i) => {
       const { poster, source, postImg, comments, likes, liked } = post;
       const { like } = this.props;
       return (
         <FeedBox
-          key={i}
+          key={source + i}
           postNo={i}
           poster={poster}
           source={source}
@@ -42,7 +45,7 @@ export default class Feed extends Component {
         />
       );
     });
-
+    /* eslint-enable */
     return (
       <div className={styles.container}>
         <Header />

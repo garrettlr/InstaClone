@@ -1,6 +1,6 @@
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
 import HomePage from '../components/HomePage';
+// import { bindActionCreators } from 'redux';
+// import { connect } from 'react-redux';
 // import * as LoginActions from '../actions/login';
 //
 // function mapStateToProps(state) {

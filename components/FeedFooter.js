@@ -1,7 +1,6 @@
 // @flow
 import React from 'react';
 import styles from './Feed.scss';
-import bootstrap from './bootstrap/bootstrap.css';
 import Comment from './Comment';
 
 type Props = {

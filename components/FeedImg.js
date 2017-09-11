@@ -12,7 +12,12 @@ const FeedImg = (props: Props) => {
   const { postImg, like, postNo } = props;
   return (
     <div className={styles.imgbox}>
-      <img className={bootstrap['img-responsive']} onDoubleClick={() => like(postNo)} src={postImg} />
+      <img
+        className={bootstrap['img-responsive']}
+        onDoubleClick={() => like(postNo)}
+        src={postImg}
+        alt={'an instagram post'}
+      />
     </div>
   );
 };

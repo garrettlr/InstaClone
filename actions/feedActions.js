@@ -5,7 +5,7 @@ export const ADD_COMMENT = 'ADD_COMMENT';
 export const LIKE = 'LIKE';
 
 // url for AJAX
-const url = 'https://codesmith-precourse.firebaseio.com/instagram/-JqL35o8u6t3dTQaFXSV.json';
+const URL = 'https://codesmith-precourse.firebaseio.com/instagram/-JqL35o8u6t3dTQaFXSV.json';
 
 function getPosts(url: string, dispatch: ()=> void) {
   const xhr = new XMLHttpRequest();
@@ -13,12 +13,14 @@ function getPosts(url: string, dispatch: ()=> void) {
   xhr.onload = () => {
     if (xhr.status >= 200 && xhr.status < 400) {
       const urls = JSON.parse(xhr.responseText);
-      const verifiedUrls = urls.map(url => verifyPosts(url));
-
+      const verifiedUrls = urls.map(link => verifyPosts(link));
+      /* eslint-disable promise/always-return */
+      // should dispatch not return.
       Promise.all(verifiedUrls: []).then(cleanUrls => {
-        const urls = cleanUrls.filter(url => url.length > 0);
-        dispatch(addData(urls));
-      });
+        const links = cleanUrls.filter(link => link.length > 0);
+        dispatch(addData(links));
+      }).catch(() => { });
+      /* eslint-enable */
     }
   };
   xhr.send();
@@ -26,7 +28,7 @@ function getPosts(url: string, dispatch: ()=> void) {
 
 // returns valid urls or empty strings to be filtered out.
 function verifyPosts(url: string) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     const xhr = new XMLHttpRequest();
     xhr.open('GET', url, true);
     xhr.onload = () => {
@@ -50,7 +52,7 @@ function addData(payload) {
 }
 
 export function addDataAjax() {
-  return dispatch => getPosts(url, dispatch);
+  return dispatch => getPosts(URL: string, dispatch: () => void);
 }
 // dispatches ajax ac if post container at full scroll
 export function scroll(target: {}) {
@@ -65,11 +67,11 @@ export function scroll(target: {}) {
   };
 }
 
-type payloadType = {
-  +type: number,
-  +type: string,
-  +type: string,
-};
+// type payloadType = {
+//   +type: number,
+//   +type: string,
+//   +type: string,
+// };
 
 export function addComment(payload) {
   return {

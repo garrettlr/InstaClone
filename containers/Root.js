@@ -3,7 +3,11 @@ import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import Routes from '../routes';
 
-export default function Root({ store, history }) {
+type Props = {
+  store: {},
+  history: {},
+}
+export default function Root({ store, history }: Props) {
   return (
     <Provider store={store}>
       <ConnectedRouter history={history}>
