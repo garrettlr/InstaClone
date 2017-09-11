@@ -1,3 +1,4 @@
+// @flow
 import React from 'react';
 import styles from './Feed.scss';
 import bootstrap from './bootstrap/bootstrap.css';
@@ -5,7 +6,18 @@ import FeedHeader from './FeedHeader';
 import FeedFooter from './FeedFooter';
 import FeedImg from './FeedImg';
 
-export default (props) => {
+type Props = {
+  poster: string,
+  source: string,
+  postImg: string,
+  comments: [],
+  likes: number,
+  like: () => void,
+  liked: boolean,
+  handleComment: () => void,
+  postNo: number,
+}
+export default (props: Props) => {
   const { poster, source, postImg, comments, likes, like, liked, handleComment, postNo } = props;
   return (
     <div className={`${bootstrap.row} ${styles.postbox}`}>

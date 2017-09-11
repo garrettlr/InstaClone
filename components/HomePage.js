@@ -16,12 +16,9 @@ export default class HomePage extends Component {
       username: '',
       password: '',
     };
-    this.handleUsername = this.handleUsername.bind(this);
-    this.handlePassword = this.handlePassword.bind(this);
-    this.handleLogin = this.handleLogin.bind(this);
   }
 
-  handleUsername(event) {
+  handleUsername = event => {
     if (event.target.value.trim().length > 0) {
       this.setState({
         username: event.target.value
@@ -29,7 +26,7 @@ export default class HomePage extends Component {
     }
   }
 
-  handlePassword(event) {
+  handlePassword = event => {
     if (event.target.value.trim().length > 0) {
       this.setState({
         password: event.target.value
@@ -37,7 +34,7 @@ export default class HomePage extends Component {
     }
   }
 
-  handleLogin(event) {
+  handleLogin = event => {
     console.log(this.state);
   }
 

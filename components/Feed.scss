@@ -65,8 +65,8 @@
 }
 
 #searchField {
-  border: 1px solid #e6e6e6;
-  background-color: #fafafa;
+  border: 1px solid $border;
+  background-color: $background-color-primary;
   color: $fontColor;
   text-align: center;
   font-weight: 200;
@@ -101,13 +101,17 @@
   width: 500px;
 }
 
+.picli {
+  display: inline-block;
+  margin-right: 25px;
+}
+
 .pic {
   height: 25px;
   width: 25px;
   border: 1px solid black;
   border-radius: 100%;
   display: inline-block;
-  margin-right: 25px;
 }
 .uname {
   display: inline-block;

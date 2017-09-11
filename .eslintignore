@@ -37,3 +37,11 @@ flow-typed/npm/*
 .idea
 npm-debug.log.*
 __snapshots__
+
+# build tools
+.babelric
+webpack.config.js
+.gitignore
+.eslintrc
+README.md
+yarn.lock

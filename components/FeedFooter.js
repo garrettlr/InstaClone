@@ -1,9 +1,19 @@
+//@flow
 import React from 'react';
 import styles from './Feed.scss';
 import bootstrap from './bootstrap/bootstrap.css';
 import Comment from './Comment';
 
-export default (props) => {
+type Props = {
+  likes: number,
+  comments: [],
+  like: () => void,
+  postNo: number,
+  handleComment: () => void,
+  liked: boolean,
+}
+
+export default (props: Props) => {
   const { likes, comments, like, postNo, handleComment, liked } = props;
   const commentsJSX = comments.map((comment) => (<Comment
     key={`${comment.comment} ${comment.commentor}`}
@@ -17,7 +27,7 @@ export default (props) => {
   let commentInput = null;
   const handleClick = () => {
     commentInput.focus();
-  }
+  };
   return (
     <div className={styles.bottom}>
       <div className={styles.buttonbox}>
