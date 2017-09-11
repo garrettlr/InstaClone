@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './Feed.scss';
 
-export default () => (
+const Header = () => (
   <header className={`${styles.headerBar}`}>
     <div className={styles.headerLogos}>
       <img src="logo.jpg" className={styles.logo} />
@@ -21,3 +21,5 @@ export default () => (
     </div>
   </header>
 );
+
+export default Header;

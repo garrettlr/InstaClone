@@ -8,7 +8,7 @@ type Props = {
   source: string,
 }
 
-export default (props: Props) => {
+const FeedHeader = (props: Props) => {
   const { poster, source } = props;
 
   return (
@@ -18,3 +18,5 @@ export default (props: Props) => {
     </div>
   );
 };
+
+export default FeedHeader;

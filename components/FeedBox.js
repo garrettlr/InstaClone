@@ -17,7 +17,7 @@ type Props = {
   handleComment: () => void,
   postNo: number,
 }
-export default (props: Props) => {
+const FeedBox = (props: Props) => {
   const { poster, source, postImg, comments, likes, like, liked, handleComment, postNo } = props;
   return (
     <div className={`${bootstrap.row} ${styles.postbox}`}>
@@ -48,5 +48,4 @@ export default (props: Props) => {
   );
 };
 
-
-// 36-62;
+export default FeedBox;

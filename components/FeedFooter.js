@@ -13,7 +13,7 @@ type Props = {
   liked: boolean,
 }
 
-export default (props: Props) => {
+const FeedFooter = (props: Props) => {
   const { likes, comments, like, postNo, handleComment, liked } = props;
   const commentsJSX = comments.map((comment) => (<Comment
     key={`${comment.comment} ${comment.commentor}`}
@@ -64,3 +64,5 @@ export default (props: Props) => {
     </div>
   );
 };
+
+export default FeedFooter;

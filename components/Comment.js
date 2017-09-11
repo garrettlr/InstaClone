@@ -2,7 +2,11 @@
 import React from 'react';
 import styles from './Feed.scss';
 
-export default (props) => {
+type Props = {
+  commentor: string,
+  comment: string,
+}
+const Comment = (props: Props) => {
   const { commentor, comment } = props;
   return (
     <p className={styles.comment}>
@@ -11,3 +15,5 @@ export default (props) => {
     </p>
   );
 };
+
+export default Comment;

@@ -8,7 +8,7 @@ type Props = {
   like: () => void,
   postNo: string,
 }
-export default (props) => {
+const FeedImg = (props) => {
   const { postImg, like, postNo } = props;
   return (
     <div className={styles.imgbox}>
@@ -16,3 +16,5 @@ export default (props) => {
     </div>
   );
 };
+
+export default FeedImg;
