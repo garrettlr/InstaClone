@@ -1,4 +1,4 @@
-//@flow
+// @flow
 export const ADD_DATA_AJAX = 'ADD_DATA_AJAX';
 export const INCREASE_POSTS = 'INCREASE_POSTS';
 export const ADD_COMMENT = 'ADD_COMMENT';
