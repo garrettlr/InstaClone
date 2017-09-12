@@ -12,7 +12,11 @@
   "env": {
     "production": {
       "presets": ["react-optimize"],
-      "plugins": ["babel-plugin-dev-expression"]
+      "plugins": [
+        "transform-class-properties",
+        "transform-es2015-classes",
+        "babel-plugin-dev-expression"
+      ]
     },
     "development": {
       "plugins": [

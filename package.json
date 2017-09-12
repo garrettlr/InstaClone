@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node server/server.js",
-    "webpack": "./node_modules/.bin/webpack -w",
+    "build": "NODE_ENV=production ./node_modules/.bin/webpack -w",
     "webdev": "webpack-dev-server",
     "lint": "NODE_ENV=development eslint --cache --format=node_modules/eslint-formatter-pretty .",
     "lint-fix": "NODE_ENV=development npm run lint -- --fix"
@@ -55,7 +55,9 @@
     "react-test-renderer": "^15.6.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "url-loader": "^0.5.9",
+    "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^2.7.1"
   },
   "dependencies": {
