@@ -12,6 +12,7 @@ export default class Feed extends Component {
     addCommentThunk: () => void,
     scroll: () => void,
   }
+
   /* eslint-disable no-param-reassign */
   handleComment = (event, postNo) => {
     if (event.key === 'Enter') {
@@ -21,9 +22,9 @@ export default class Feed extends Component {
   }
   /* eslint-enable */
 
-
   render() {
     const { feed, scroll, like } = this.props;
+    const localScroll = event => scroll(event.target);
     /* eslint-disable react/no-array-index-key */
     // no solid choice for unique keys except index, due to data shape.
     // acceptable for this simple demo case only.
@@ -48,16 +49,14 @@ export default class Feed extends Component {
     return (
       <div className={styles.container}>
         <Header />
-
         <div className={styles.masthead}>
           <div
             className={`${styles.postcontainer} ${bootstrap.container}`}
-            onScroll={event => scroll(event.target)}
+            onScroll={localScroll}
           >
             {posts}
           </div>
         </div>
-
       </div>
     );
   }
