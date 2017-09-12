@@ -44,16 +44,14 @@ function verifyPosts(url: string) {
   });
 }
 
-function addData(payload) {
-  return {
-    type: ADD_DATA_AJAX,
-    payload,
-  };
-}
+const addData = payload => ({
+  type: ADD_DATA_AJAX,
+  payload,
+});
 
-export function addDataAjax() {
-  return dispatch => getPosts(URL: string, dispatch: () => void);
-}
+const addDataAjax = dispatch => getPosts(URL: string, dispatch: () => void);
+export default addDataAjax;
+
 // dispatches ajax ac if post container at full scroll
 export function scroll(target: {}) {
   return dispatch => {
@@ -62,7 +60,7 @@ export function scroll(target: {}) {
     const clientHeight = target.clientHeight;
 
     if (scrollHeight - scrollTop === clientHeight) {
-      dispatch(addDataAjax());
+      dispatch(addDataAjax(dispatch));
     }
   };
 }
