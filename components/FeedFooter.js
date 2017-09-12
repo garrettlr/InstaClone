@@ -14,25 +14,23 @@ type Props = {
 
 const FeedFooter = (props: Props) => {
   const { likes, comments, like, postNo, handleComment, liked } = props;
+  // set focus on comment input when bubble is clicked
+  let commentInput = null;
+  const handleClick = () => commentInput.focus();
+  const ref = input => { commentInput = input; };
+  const localLike = () => like(postNo);
+  const localHandleComment = event => handleComment(event, postNo);
+
+  // styles for likedClass ternary, controls heart on feed.
+  const likedStyle = `fa fa-heart fa-2x ${styles.liked} ${styles.heart}`;
+  const unlikedStyle = `fa fa-heart-o fa-2x ${styles.unliked} ${styles['heart-o']}`;
+  const likedClass = liked ? likedStyle : unlikedStyle;
+
   const commentsJSX = comments.map((comment) => (<Comment
     key={`${comment.comment} ${comment.commentor}`}
     commentor={comment.commentor}
     comment={comment.comment}
   />));
-
-  const localLike = () => like(postNo);
-  const localHandleComment = event => handleComment(event, postNo);
-
-  // set focus on comment input when bubble is clicked
-  let commentInput = null;
-  const handleClick = () => commentInput.focus();
-
-  // styles for likedClass ternary, controls heart on feed.
-  const likedStyle: `fa fa-heart fa-2x ${styles.liked} ${styles.heart}`;
-  const unlikedStyle: `fa fa-heart-o fa-2x ${styles.unliked} ${styles['heart-o']}`;
-
-
-  const likedClass = liked ? likedStyle : unlikedStyle;
 
   return (
     <div className={styles.bottom}>
@@ -63,7 +61,7 @@ const FeedFooter = (props: Props) => {
             className={styles.newcomment}
             placeholder={'Add a comment...'}
             onKeyPress={localHandleComment}
-            ref={input => { commentInput = input; }}
+            ref={ref}
           />
         </div>
       </div>
