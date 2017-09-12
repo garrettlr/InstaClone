@@ -1,3 +1,4 @@
+//@flow
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { createHashHistory } from 'history';
@@ -8,7 +9,11 @@ import * as feedActions from '../actions/feedActions';
 
 const history = createHashHistory();
 
-const configureStore = (initialState) => {
+type loggerType = {
+  level: string,
+  collapsed: boolean,
+}
+const configureStore = (initialState: {} = {}) => {
   const middleware = [];
   const enhancers = [];
 
@@ -19,12 +24,12 @@ const configureStore = (initialState) => {
   const logger = createLogger({
     level: 'info',
     collapsed: true
-  });
+  }: loggerType);
   middleware.push(logger);
 
   // router
 
-  const router = routerMiddleware(history);
+  const router = routerMiddleware(history: {});
   middleware.push(router);
 
   // devTools
@@ -36,7 +41,7 @@ const configureStore = (initialState) => {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
       // Options: http://zalmoxisus.github.io/redux-devtools-extension/API/Arguments.html
-      actionCreators,
+      actionCreators: {},
     })
     : compose;
   /* eslint-enable */
@@ -46,7 +51,7 @@ const configureStore = (initialState) => {
 
   // initStore
 
-  const store = createStore(rootReducer, initialState, enhancer);
+  const store = createStore(rootReducer: () => void, initialState: {}, enhancer: () => void);
 
   return store;
 };

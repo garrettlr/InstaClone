@@ -9,8 +9,8 @@ type Props = {
   postNo: number,
 }
 
-const FeedImg = (props: Props) => {
-  const { postImg, like, postNo } = props;
+const FeedImg = ({ postImg, like, postNo }: Props) => {
+  // const { postImg, like, postNo } = props;
 
   const localLike = () => like(postNo);
 

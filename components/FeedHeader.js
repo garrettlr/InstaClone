@@ -7,9 +7,7 @@ type Props = {
   source: string,
 }
 
-const FeedHeader = (props: Props) => {
-  const { poster, source } = props;
-
+const FeedHeader = ({ poster, source }: Props) => {
   return (
     <div className={'header'}>
       <img className={styles.poster} src={source} alt={'user\'s profile pic'} />
