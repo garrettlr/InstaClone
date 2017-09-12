@@ -45,7 +45,6 @@ const FeedBox = (props: Props) => {
         />
       </div>
     </div>
-
   );
 };
 
