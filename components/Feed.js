@@ -23,13 +23,12 @@ export default class Feed extends Component {
 
 
   render() {
-    const feed = this.props.feed;
+    const { feed, scroll, like } = this.props;
     /* eslint-disable react/no-array-index-key */
     // no solid choice for unique keys except index, due to data shape.
     // acceptable for this simple demo case only.
     const posts = feed.map((post, i) => {
       const { poster, source, postImg, comments, likes, liked } = post;
-      const { like } = this.props;
       return (
         <FeedBox
           key={source + i}
@@ -53,7 +52,7 @@ export default class Feed extends Component {
         <div className={styles.masthead}>
           <div
             className={`${styles.postcontainer} ${bootstrap.container}`}
-            onScroll={(event) => this.props.scroll(event.target)}
+            onScroll={event => scroll(event.target)}
           >
             {posts}
           </div>

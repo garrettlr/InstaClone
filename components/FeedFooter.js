@@ -20,6 +20,9 @@ const FeedFooter = (props: Props) => {
     comment={comment.comment}
   />));
 
+  const localLike = () => like(postNo);
+  const localHandleComment = event => handleComment(event, postNo);
+
   const likedClass = liked ? `fa fa-heart fa-2x ${styles.liked} ${styles.heart}` : `fa fa-heart-o fa-2x ${styles.unliked} ${styles['heart-o']}`;
 
   // set focus on comment input when bubble is clicked
@@ -33,7 +36,7 @@ const FeedFooter = (props: Props) => {
         <i
           className={likedClass}
           aria-hidden={'true'}
-          onClick={() => like(postNo)}
+          onClick={localLike}
         />
         <i
           className={`fa fa-comment-o fa-2x ${styles.comment}`}
@@ -55,8 +58,8 @@ const FeedFooter = (props: Props) => {
           <input
             className={styles.newcomment}
             placeholder={'Add a comment...'}
-            onKeyPress={(event) => handleComment(event, postNo)}
-            ref={(input) => { commentInput = input; }}
+            onKeyPress={localHandleComment}
+            ref={input => { commentInput = input; }}
           />
         </div>
       </div>

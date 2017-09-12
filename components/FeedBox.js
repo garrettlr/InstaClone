@@ -17,6 +17,7 @@ type Props = {
   handleComment: () => void,
   postNo: number,
 }
+
 const FeedBox = (props: Props) => {
   const { poster, source, postImg, comments, likes, like, liked, handleComment, postNo } = props;
   return (

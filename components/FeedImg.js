@@ -8,13 +8,17 @@ type Props = {
   like: () => void,
   postNo: number,
 }
+
 const FeedImg = (props: Props) => {
   const { postImg, like, postNo } = props;
+
+  const localLike = () => like(postNo);
+
   return (
     <div className={styles.imgbox}>
       <img
         className={bootstrap['img-responsive']}
-        onDoubleClick={() => like(postNo)}
+        onDoubleClick={localLike}
         src={postImg}
         alt={'an instagram post'}
       />
