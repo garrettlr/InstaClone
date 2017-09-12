@@ -4,7 +4,7 @@ import App from './containers/App';
 import HomePage from './containers/HomePage';
 import Feed from './containers/Feed';
 
-export default () => (
+const Routes = () => (
   <App>
     <Switch>
       <Route
@@ -20,3 +20,5 @@ export default () => (
     </Switch>
   </App>
 );
+
+export default Routes;

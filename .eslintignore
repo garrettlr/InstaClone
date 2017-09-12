@@ -39,7 +39,7 @@ npm-debug.log.*
 __snapshots__
 
 # build tools
-.babelric
+.babelrc
 webpack.config.js
 .gitignore
 .eslintrc
