@@ -23,13 +23,11 @@ const FeedFooter = (props: Props) => {
   const localLike = () => like(postNo);
   const localHandleComment = event => handleComment(event, postNo);
 
-  const likedClass = liked ? `fa fa-heart fa-2x ${styles.liked} ${styles.heart}` : `fa fa-heart-o fa-2x ${styles.unliked} ${styles['heart-o']}`;
-
   // set focus on comment input when bubble is clicked
   let commentInput = null;
-  const handleClick = () => {
-    commentInput.focus();
-  };
+  const handleClick = () => commentInput.focus();
+
+  const likedClass = liked ? `fa fa-heart fa-2x ${styles.liked} ${styles.heart}` : `fa fa-heart-o fa-2x ${styles.unliked} ${styles['heart-o']}`;
   return (
     <div className={styles.bottom}>
       <div className={styles.buttonbox}>
