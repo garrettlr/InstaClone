@@ -12,6 +12,10 @@
     "lint": "NODE_ENV=development eslint --cache --format=node_modules/eslint-formatter-pretty .",
     "lint-fix": "NODE_ENV=development npm run lint -- --fix"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garrettlr/InstaClone.git"
+  },
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-core": "^6.24.1",
