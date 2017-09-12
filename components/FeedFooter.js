@@ -27,7 +27,13 @@ const FeedFooter = (props: Props) => {
   let commentInput = null;
   const handleClick = () => commentInput.focus();
 
-  const likedClass = liked ? `fa fa-heart fa-2x ${styles.liked} ${styles.heart}` : `fa fa-heart-o fa-2x ${styles.unliked} ${styles['heart-o']}`;
+  // styles for likedClass ternary, controls heart on feed.
+  const likedStyle: `fa fa-heart fa-2x ${styles.liked} ${styles.heart}`;
+  const unlikedStyle: `fa fa-heart-o fa-2x ${styles.unliked} ${styles['heart-o']}`;
+
+
+  const likedClass = liked ? likedStyle : unlikedStyle;
+
   return (
     <div className={styles.bottom}>
       <div className={styles.buttonbox}>
