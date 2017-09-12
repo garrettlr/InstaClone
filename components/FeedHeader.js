@@ -7,13 +7,11 @@ type Props = {
   source: string,
 }
 
-const FeedHeader = ({ poster, source }: Props) => {
-  return (
-    <div className={'header'}>
-      <img className={styles.poster} src={source} alt={'user\'s profile pic'} />
-      <p className={styles.postername}>{poster}</p>
-    </div>
-  );
-};
+const FeedHeader = ({ poster, source }: Props) => (
+  <div className={'header'}>
+    <img className={styles.poster} src={source} alt={'user\'s profile pic'} />
+    <p className={styles.postername}>{poster}</p>
+  </div>
+);
 
 export default FeedHeader;

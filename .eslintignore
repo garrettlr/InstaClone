@@ -41,6 +41,8 @@ __snapshots__
 # build tools
 .babelrc
 webpack.config.js
+webpack.config.dev.js
+webpack.config.prod.js
 .gitignore
 .eslintrc
 README.md

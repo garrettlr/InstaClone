@@ -10,7 +10,6 @@ type Props = {
 }
 
 const FeedImg = ({ postImg, like, postNo }: Props) => {
-
   const localLike = () => like(postNo);
 
   return (

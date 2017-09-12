@@ -1,4 +1,4 @@
-//@flow
+// @flow
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { createHashHistory } from 'history';
@@ -41,7 +41,7 @@ const configureStore = (initialState: {} = {}) => {
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
       // Options: http://zalmoxisus.github.io/redux-devtools-extension/API/Arguments.html
-      actionCreators: {},
+      actionCreators,
     })
     : compose;
   /* eslint-enable */
