@@ -14,10 +14,13 @@ type Props = {
 
 const FeedFooter = (props: Props) => {
   const { likes, comments, like, postNo, handleComment, liked } = props;
+
+  // sets up ref for comment bubble
   // set focus on comment input when bubble is clicked
   let commentInput = null;
   const handleClick = () => commentInput.focus();
   const ref = input => { commentInput = input; };
+
   const localLike = () => like(postNo);
   const localHandleComment = event => handleComment(event, postNo);
 
@@ -26,6 +29,7 @@ const FeedFooter = (props: Props) => {
   const unlikedStyle = `fa fa-heart-o fa-2x ${styles.unliked} ${styles['heart-o']}`;
   const likedClass = liked ? likedStyle : unlikedStyle;
 
+  // creates comments component for each comment.
   const commentsJSX = comments.map((comment) => (<Comment
     key={`${comment.comment} ${comment.commentor}`}
     commentor={comment.commentor}
@@ -44,7 +48,6 @@ const FeedFooter = (props: Props) => {
           className={`fa fa-comment-o fa-2x ${styles.comment}`}
           aria-hidden={'true'}
           onClick={handleClick}
-
         />
       </div>
       <div className={styles.likesbox}>
