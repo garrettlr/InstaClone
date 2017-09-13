@@ -20,3 +20,17 @@ export function getPass(payload) {
     payload,
   };
 }
+
+export function createUsername(event) {
+  return dispatch => {
+    const username = event.target.value + event.key;
+    dispatch(getUser(username));
+  }
+}
+
+export function createPassword(event) {
+  return dispatch => {
+    const password = event.target.value + event.key;
+    dispatch(getPass(password));
+  }
+}

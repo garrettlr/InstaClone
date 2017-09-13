@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import styles from './HomePage.scss';
 
-
 export default class HomePage extends Component {
   props: {
     getUser: () => void,
@@ -11,24 +10,20 @@ export default class HomePage extends Component {
     checkUser: () => void,
     login: {},
   }
-  handleUsername = event => {
-    const username = event.target.value + event.key;
-    this.props.getUser(username);
-  }
 
-  handlePassword = event => {
-    const password = event.target.value + event.key;
-    this.props.getPass(password);
-  }
+  handleUsername = event => this.props.createUsername(event);
 
-  handleAuth = isAuthenticated => {
-    if (isAuthenticated) return (<Redirect to="/feed" />);
-  }
+  handlePassword = event => this.props.createPassword(event);
+
+  handleClick = () => this.props.checkUser();
 
   render() {
+
     const { login, checkUser } = this.props;
     const { isAuthenticated, failedAuth } = login;
     const failure = (<p className={styles.error}>Invalid username or password</p>);
+    const auth = (<Redirect to="/feed" />);
+
     return (
       <div className={styles.main}>
         <div className={styles.login}>
@@ -53,13 +48,13 @@ export default class HomePage extends Component {
           />
           <div
             id={styles.loginButton}
-            onClick={() => checkUser()}
+            onClick={this.handleClick}
             role="button"
             tabIndex="-1"
           >
             Login
           </div>
-          {this.handleAuth(isAuthenticated)}
+          {isAuthenticated ? auth : null}
           {failedAuth ? failure : null}
         </div>
       </div>
