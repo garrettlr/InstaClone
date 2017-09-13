@@ -6,7 +6,7 @@ import { routerMiddleware, routerActions } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
 import rootReducer from '../reducers/index';
 import * as feedActions from '../actions/feedActions';
-
+import * as loginActions from '../actions/loginActions'
 const history = createHashHistory();
 
 type loggerType = {
@@ -36,6 +36,7 @@ const configureStore = (initialState: {} = {}) => {
   const actionCreators = {
     ...routerActions,
     ...feedActions,
+    ...loginActions,
   };
   /* eslint-disable no-underscore-dangle */
   const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__

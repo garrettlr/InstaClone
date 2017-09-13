@@ -44,6 +44,7 @@
 
 #loginButton {
   text-align: center;
+  text-decoration: none;
   display: block;
   margin: auto;
   margin-bottom: 6px;
@@ -54,6 +55,14 @@
   border-radius: 3px;
   background-color: #3195f3;
   outline: none;
+}
+
+#loginButton:hover {
+  text-decoration: none;
+}
+
+#loginButton:active {
+  text-decoration: none;
 }
 
 a {

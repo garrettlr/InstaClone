@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {
-  BrowserRouter as Router,
-  Route,
+  // BrowserRouter as Router,
   Link,
   Redirect,
-  withRouter
+  // withRouter
 } from 'react-router-dom';
 import styles from './HomePage.scss';
 
@@ -20,25 +19,44 @@ export default class HomePage extends Component {
 
   handleUsername = event => {
     if (event.target.value.trim().length > 0) {
-      this.setState({
-        username: event.target.value
-      });
+      const payload = {
+        username: event.target.value,
+        password: this.state.password
+      }
+      this.setState(payload);
+      this.props.checkUser(payload);
     }
   }
 
   handlePassword = event => {
     if (event.target.value.trim().length > 0) {
-      this.setState({
-        password: event.target.value
-      });
+      const payload = {
+        username: this.state.username,
+        password: event.target.value,
+      }
+      this.setState(payload);
+
+      this.props.checkUser(payload);
     }
   }
 
-  handleLogin = event => {
-    console.log(this.state);
+  handleAuth = isAuthenticated => {
+    console.log(isAuthenticated);
+    if (isAuthenticated) return (<Redirect to="/feed">
+      <div id={styles.loginButton}>
+        Login
+      </div>
+    </Redirect>);
+
+    return (<Link to="/">
+      <div id={styles.loginButton}>
+        Login
+      </div>
+    </Link>);
   }
 
   render() {
+    const { checkUser } = this.props;
     return (
       <div className={styles.main}>
         <div className={styles.login}>
@@ -57,9 +75,14 @@ export default class HomePage extends Component {
             type="password"
             onKeyPress={this.handlePassword}
           />
-          <div id={styles.loginButton} onClick={this.handleLogin}>
-            <Link to="/feed">Login</Link>
-          </div>
+
+          {this.handleAuth(this.props.login.isAuthenticated)}
+
+            {/* <Link to="/feed">
+              <div id={styles.loginButton}>
+                Login
+              </div>
+            </Link> */}
         </div>
       </div>
     );

@@ -1,18 +1,18 @@
 import HomePage from '../components/HomePage';
-// import { bindActionCreators } from 'redux';
-// import { connect } from 'react-redux';
-// import * as LoginActions from '../actions/login';
-//
-// function mapStateToProps(state) {
-//   return {
-//     user: state.user;
-//   }
-// }
-//
-// function mapDispatchToProps(dispatch) {
-//   return bindActionCreators({LoginActions}, dispatch);
-// }
-//
-// export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import * as loginActions from '../actions/loginActions';
 
-export default HomePage;
+function mapStateToProps(state) {
+  return {
+    login: state.login,
+  }
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(loginActions, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
+
+// export default HomePage;
