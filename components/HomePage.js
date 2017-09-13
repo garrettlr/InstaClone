@@ -1,12 +1,16 @@
+// @flow
 import React, { Component } from 'react';
-import {
-  Link,
-  Redirect,
-} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import styles from './HomePage.scss';
 
 
 export default class HomePage extends Component {
+  props: {
+    getUser: () => void,
+    getPass: () => void,
+    checkUser: () => void,
+    login: {},
+  }
   handleUsername = event => {
     const username = event.target.value + event.key;
     this.props.getUser(username);
@@ -18,21 +22,22 @@ export default class HomePage extends Component {
   }
 
   handleAuth = isAuthenticated => {
-    if (isAuthenticated) return (<Redirect to="/feed" />)
-  }
-
-  displayFailed = failedAuth => {
-    return failedAuth? <p>You Must Sign in to view your feed</p> : null;
+    if (isAuthenticated) return (<Redirect to="/feed" />);
   }
 
   render() {
     const { login, checkUser } = this.props;
     const { isAuthenticated, failedAuth } = login;
+    const failure = (<p className={styles.error}>You Must Sign in to view your feed</p>);
     return (
       <div className={styles.main}>
         <div className={styles.login}>
           <div id={styles.titlebox}>
-            <img id={styles.title} src="instagram-1.svg" />
+            <img
+              id={styles.title}
+              src="instagram-1.svg"
+              alt="logo"
+            />
           </div>
           <input
             className={styles.input}
@@ -46,11 +51,16 @@ export default class HomePage extends Component {
             type="password"
             onKeyPress={this.handlePassword}
           />
-          <div id={styles.loginButton} onClick={()=>checkUser()}>
+          <div
+            id={styles.loginButton}
+            onClick={() => checkUser()}
+            role="button"
+            tabIndex="-1"
+          >
             Login
           </div>
           {this.handleAuth(isAuthenticated)}
-          {this.displayFailed(failedAuth)}
+          {failedAuth ? failure : null}
         </div>
       </div>
     );

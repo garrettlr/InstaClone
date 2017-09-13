@@ -28,21 +28,21 @@ const authDefault = {
       password: 'password',
     },
   ],
-}
+};
 
 
 const login = (state = authDefault, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case CHECK_USER:
       return validUser(state);
     case GET_USER:
       console.log(action);
       return getUser(state, action.payload);
     case GET_PASS:
-      return getPass(state, action.payload)
+      return getPass(state, action.payload);
     default:
       return state;
   }
-}
+};
 
 export default login;

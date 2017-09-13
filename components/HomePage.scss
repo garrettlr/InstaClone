@@ -63,6 +63,13 @@
 
 #loginButton:active {
   text-decoration: none;
+  background-color: red;
+}
+
+.error {
+  font-size: 12px;
+  color: red;
+  text-align: center;
 }
 
 a {
