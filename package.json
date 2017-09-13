@@ -10,7 +10,9 @@
     "build": "NODE_ENV=production ./node_modules/.bin/webpack -w",
     "webdev": "webpack-dev-server",
     "lint": "NODE_ENV=development eslint --cache --format=node_modules/eslint-formatter-pretty .",
-    "lint-fix": "NODE_ENV=development npm run lint -- --fix"
+    "lint-fix": "NODE_ENV=development npm run lint -- --fix",
+    "lint-styles": "stylelint components/*.scss static/*.css --syntax scss",
+    "lint-styles-fix": "stylefmt -r components/*.scss static/*.css"
   },
   "repository": {
     "type": "git",
@@ -59,6 +61,9 @@
     "react-test-renderer": "^15.6.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
+    "stylefmt": "^6.0.0",
+    "stylelint": "^8.1.1",
+    "stylelint-config-standard": "^17.0.0",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "url-loader": "^0.5.9",
     "webpack-bundle-analyzer": "^2.9.0",

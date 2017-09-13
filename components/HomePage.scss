@@ -3,10 +3,10 @@
 .main {
   height: 100vh;
   margin: auto;
-
   background-color: $background-color-primary;
   overflow-y: hidden;
 }
+
 .login {
   margin: auto;
   margin-top: 200px;
@@ -24,6 +24,7 @@
   margin-top: 25px;
   margin-bottom: 20px;
 }
+
 #title {
   height: inherit;
   width: inherit;

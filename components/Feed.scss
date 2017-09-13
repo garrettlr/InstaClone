@@ -15,20 +15,20 @@
   overflow-x: hidden;
 }
 
-.postcontainer{
+.postcontainer {
   width: 600px;
   max-height: 100vh;
   overflow-y: scroll;
 }
 
 .headerBar {
- width: 100vw;
- height: 75px;
- border-bottom: 1px solid $border;
- background-color: white;
- display: flex;
- flex-direction: row;
- justify-content: space-between;
+  width: 100vw;
+  height: 75px;
+  border-bottom: 1px solid $border;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .headerLogos {
@@ -46,7 +46,6 @@
   height: 40px;
   width: 150px;
   display: inline-block;
-
 }
 
 .logo {
@@ -78,7 +77,7 @@
   display: inline-block;
 }
 
-.glass{
+.glass {
   display: inline-block;
   position: relative;
   top: -23px;
@@ -86,7 +85,7 @@
   color: #dbdbdb;
 }
 
-.icons{
+.icons {
   display: inline-block;
   width: 500px;
   margin-right: -200px;
@@ -94,7 +93,7 @@
   list-style: none;
 }
 
-.iconslist{
+.iconslist {
   text-decoration: none;
   list-style: none;
   display: inline-block;
@@ -113,6 +112,7 @@
   border-radius: 100%;
   display: inline-block;
 }
+
 .uname {
   display: inline-block;
   height: 25px;
@@ -125,7 +125,7 @@
   color: black;
 }
 
-.heart{
+.heart {
   -webkit-text-fill-color: red;
   margin-right: 5px;
 }
@@ -133,20 +133,22 @@
 .heart-o {
   margin-right: 5px;
 }
-.heart:hover{
+
+.heart:hover {
   cursor: pointer;
-   -webkit-text-fill-color: red;
-}
-.heart-o:hover{
-  cursor: pointer;
-   -webkit-text-fill-color: red;
+  -webkit-text-fill-color: red;
 }
 
-.comment:hover{
+.heart-o:hover {
+  cursor: pointer;
+  -webkit-text-fill-color: red;
+}
+
+.comment:hover {
   cursor: pointer;
 }
 
-.poster{
+.poster {
   height: 30px;
   width: 30px;
   border-radius: 100%;
@@ -155,7 +157,7 @@
   margin-top: -7px;
 }
 
-.postername{
+.postername {
   display: inline-block;
   margin-left: 10px;
   margin-top: 25px;
@@ -171,44 +173,47 @@
   border: 1px solid $border;
   background-color: white;
   display: block !important;
-  padding: 0px !important;
+  padding: 0 !important;
 }
 
 .postbox:last-child {
   margin-bottom: 150px;
 }
 
-.imgbox{
-  margin: 0px;
+.imgbox {
+  margin: 0;
 }
 
-.imgbox img{
-   min-width: 583px;
+.imgbox img {
+  min-width: 583px;
 }
+
 .bottom {
-  border-top: .5px solid $border;
+  border-top: 0.5px solid $border;
 }
+
 .bottom p {
   display: block;
 }
 
-.buttonbox{
+.buttonbox {
   margin-left: 10px;
   margin-top: 10px;
 }
 
-.likesbox{
+.likesbox {
   margin-left: 10px;
 }
+
 .likes {
- // applies a classname to a p tag for convienence
+  // applies a classname to a p tag for convienence
 }
 
 .liked {
   -webkit-text-fill-color: red;
 }
 
-.noLikes{
+.noLikes {
   font-weight: bold;
 }
 
@@ -217,9 +222,11 @@
   width: 35px;
   font-size: 20px;
 }
-.commentsbox{
+
+.commentsbox {
   margin-left: 10px;
 }
+
 .commentor {
   font-weight: bold;
   display: inline-block;
@@ -230,13 +237,13 @@
   margin-left: 0;
 }
 
-.fa-comment{
+.fa-comment {
   display: inline-block;
   float: right;
   z-index: 999999999999;
 }
 
-.newcomment{
+.newcomment {
   border: none;
   outline: none;
   text-align: left;
@@ -244,6 +251,6 @@
   display: inline-block;
 }
 
-.addcomment{
+.addcomment {
   margin-bottom: 10px;
 }
