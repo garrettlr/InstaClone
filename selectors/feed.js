@@ -4,9 +4,9 @@ const getSearchFilter = state => state.searchTerm;
 
 const getFeed = state => state.feed;
 
-export const getSearchFilter = createSelector(
-  [getSearchFilter, feed], (searchFilter, feed) => {
-    switch(searchFilter) {
+const getSearchFilter = createSelector(
+  [getSearchFilter, getFeed], (searchFilter, feed) => {
+    switch (searchFilter) {
       case '':
         return feed;
       default:
@@ -14,3 +14,5 @@ export const getSearchFilter = createSelector(
     }
   }
 );
+
+export default getSearchFilter;
