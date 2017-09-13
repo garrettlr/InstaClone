@@ -18,8 +18,7 @@ export default class HomePage extends Component {
   handleClick = () => this.props.checkUser();
 
   render() {
-
-    const { login, checkUser } = this.props;
+    const { login } = this.props;
     const { isAuthenticated, failedAuth } = login;
     const failure = (<p className={styles.error}>Invalid username or password</p>);
     const auth = (<Redirect to="/feed" />);
