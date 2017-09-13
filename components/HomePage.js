@@ -12,9 +12,7 @@ export default class HomePage extends Component {
   }
 
   handleUsername = event => this.props.createUsername(event);
-
   handlePassword = event => this.props.createPassword(event);
-
   handleClick = () => this.props.checkUser();
 
   render() {
