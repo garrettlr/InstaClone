@@ -30,8 +30,11 @@ const authDefault = {
   ],
 };
 
+type actionType = {
+  +type: string,
+}
 
-const login = (state = authDefault, action) => {
+const login = (state = authDefault, action: actionType) => {
   switch (action.type) {
     case CHECK_USER:
       return validUser(state);
