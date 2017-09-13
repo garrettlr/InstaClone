@@ -1,15 +1,22 @@
 // @flow
-
 export const CHECK_USER = 'CHECK_USER';
-export const CHECK_AUTH = 'CHECK_AUTH';
+export const GET_USER = 'GET_USER';
+export const GET_PASS = 'GET_PASS';
 
+export function checkUser() {
+  return { type: CHECK_USER };
+}
 
-export function checkUser(payload) {
+export function getUser(payload) {
   return {
-    type: CHECK_USER,
+    type: GET_USER,
     payload,
   };
 }
 
-const checkAuth = () => ({ type: CHECK_AUTH });
-export default checkAuth;
+export function getPass(payload) {
+  return {
+    type: GET_PASS,
+    payload,
+  };
+}

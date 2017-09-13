@@ -9,39 +9,17 @@ import styles from './HomePage.scss';
 
 
 export default class HomePage extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: '',
-      password: '',
-    };
-  }
-
   handleUsername = event => {
-    if (event.target.value.trim().length > 0) {
-      const payload = {
-        username: event.target.value,
-        password: this.state.password
-      }
-      this.setState(payload);
-      this.props.checkUser(payload);
-    }
+    const username = event.target.value + event.key;
+    this.props.getUser(username);
   }
 
   handlePassword = event => {
-    if (event.target.value.trim().length > 0) {
-      const payload = {
-        username: this.state.username,
-        password: event.target.value,
-      }
-      this.setState(payload);
-
-      this.props.checkUser(payload);
-    }
+    const password = event.target.value + event.key;
+    this.props.getPass(password);
   }
 
   handleAuth = isAuthenticated => {
-    console.log(isAuthenticated);
     if (isAuthenticated) return (<Redirect to="/feed">
       <div id={styles.loginButton}>
         Login
@@ -49,14 +27,14 @@ export default class HomePage extends Component {
     </Redirect>);
 
     return (<Link to="/">
-      <div id={styles.loginButton}>
-        Login
-      </div>
+      <p>You Must Sign in to view your feed</p>
     </Link>);
   }
 
   render() {
-    const { checkUser } = this.props;
+    const { login, checkUser } = this.props;
+    console.log(this.props);
+    const { isAuthenticated } = login;
     return (
       <div className={styles.main}>
         <div className={styles.login}>
@@ -75,14 +53,10 @@ export default class HomePage extends Component {
             type="password"
             onKeyPress={this.handlePassword}
           />
-
-          {this.handleAuth(this.props.login.isAuthenticated)}
-
-            {/* <Link to="/feed">
-              <div id={styles.loginButton}>
-                Login
-              </div>
-            </Link> */}
+          <div id={styles.loginButton} onClick={()=>checkUser()}>
+            Login
+          </div>
+          {this.handleAuth(isAuthenticated)}
         </div>
       </div>
     );

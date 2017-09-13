@@ -1,10 +1,18 @@
 // @flow
+import {
+  CHECK_USER,
+  GET_USER,
+  GET_PASS,
+} from '../actions/loginActions';
 
-import { CHECK_USER } from '../actions/loginActions';
-import { CHECK_AUTH } from '../actions/loginActions';
 import validUser from './authFunctions/validUser';
+import getUser from './authFunctions/getUser';
+import getPass from './authFunctions/getPass';
+
 const authDefault = {
   isAuthenticated: false,
+  currentUsername: '',
+  currentPassword: '',
   users: [
     {
       username: 'glevy__',
@@ -18,16 +26,19 @@ const authDefault = {
       username: 'billy',
       password: 'password',
     },
-  ]
+  ],
 }
 
 
 const login = (state = authDefault, action) => {
   switch(action.type) {
     case CHECK_USER:
-      return validUser(state, action.payload);
-    // case CHECK_AUTH:
-    //   return isAuthenticated(state, action);
+      return validUser(state);
+    case GET_USER:
+      console.log(action);
+      return getUser(state, action.payload);
+    case GET_PASS:
+      return getPass(state, action.payload)
     default:
       return state;
   }
