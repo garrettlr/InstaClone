@@ -28,7 +28,7 @@ export default class HomePage extends Component {
   render() {
     const { login, checkUser } = this.props;
     const { isAuthenticated, failedAuth } = login;
-    const failure = (<p className={styles.error}>You Must Sign in to view your feed</p>);
+    const failure = (<p className={styles.error}>Invalid username or password</p>);
     return (
       <div className={styles.main}>
         <div className={styles.login}>
