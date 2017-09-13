@@ -50,7 +50,6 @@ const addData = payload => ({
 });
 
 const addDataAjax = dispatch => getPosts(URL: string, dispatch: () => void);
-export default addDataAjax;
 
 // dispatches ajax ac if post container at full scroll
 export function scroll(target: {}) {
@@ -60,7 +59,9 @@ export function scroll(target: {}) {
     const clientHeight = target.clientHeight;
 
     if (scrollHeight - scrollTop === clientHeight) {
-      dispatch(addDataAjax(dispatch));
+      // dispatch(addDataAjax(dispatch));
+      // look into making this a promise chain.
+      addDataAjax(dispatch);
     }
   };
 }
