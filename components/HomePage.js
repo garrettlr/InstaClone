@@ -5,8 +5,8 @@ import styles from './HomePage.scss';
 
 export default class HomePage extends Component {
   props: {
-    getUser: () => void,
-    getPass: () => void,
+    createUsername: () => void,
+    createPassword: () => void,
     checkUser: () => void,
     login: {},
   }
