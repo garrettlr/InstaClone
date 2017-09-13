@@ -15,7 +15,7 @@ const getPass = (payload: string) => ({
 
 export function checkUser() {
   return { type: CHECK_USER };
-};
+}
 
 export function createUsername(event: eventType) {
   return dispatch => {

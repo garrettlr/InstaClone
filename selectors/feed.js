@@ -4,7 +4,7 @@ const getSearchFilter = state => state.searchTerm;
 
 const getFeed = state => state.feed;
 
-const getSearchFilter = createSelector(
+const getVisiblePosts = createSelector(
   [getSearchFilter, getFeed], (searchFilter, feed) => {
     switch (searchFilter) {
       case '':
@@ -15,4 +15,4 @@ const getSearchFilter = createSelector(
   }
 );
 
-export default getSearchFilter;
+export default getVisiblePosts;
