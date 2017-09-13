@@ -36,7 +36,6 @@ const login = (state = authDefault, action) => {
     case CHECK_USER:
       return validUser(state);
     case GET_USER:
-      console.log(action);
       return getUser(state, action.payload);
     case GET_PASS:
       return getPass(state, action.payload);
