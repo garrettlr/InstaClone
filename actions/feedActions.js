@@ -66,13 +66,7 @@ export function scroll(target: {}) {
   };
 }
 
-// type payloadType = {
-//   +type: number,
-//   +type: string,
-//   +type: string,
-// };
-
-export function addComment(payload) {
+export function addComment(payload: commentType) {
   return {
     type: ADD_COMMENT,
     payload,
@@ -101,3 +95,9 @@ export function like(postNo: number = 0) {
     payload: postNo
   };
 }
+
+type commentType = {
+  postNo: number,
+  poster: string,
+  comment: string,
+};
