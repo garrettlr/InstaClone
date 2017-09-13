@@ -14,5 +14,3 @@ function mapDispatchToProps(dispatch) {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomePage);
-
-// export default HomePage;
