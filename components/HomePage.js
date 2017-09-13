@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import {
-  // BrowserRouter as Router,
   Link,
   Redirect,
-  // withRouter
 } from 'react-router-dom';
 import styles from './HomePage.scss';
 
@@ -20,21 +18,16 @@ export default class HomePage extends Component {
   }
 
   handleAuth = isAuthenticated => {
-    if (isAuthenticated) return (<Redirect to="/feed">
-      <div id={styles.loginButton}>
-        Login
-      </div>
-    </Redirect>);
+    if (isAuthenticated) return (<Redirect to="/feed" />)
+  }
 
-    return (<Link to="/">
-      <p>You Must Sign in to view your feed</p>
-    </Link>);
+  displayFailed = failedAuth => {
+    return failedAuth? <p>You Must Sign in to view your feed</p> : null;
   }
 
   render() {
     const { login, checkUser } = this.props;
-    console.log(this.props);
-    const { isAuthenticated } = login;
+    const { isAuthenticated, failedAuth } = login;
     return (
       <div className={styles.main}>
         <div className={styles.login}>
@@ -57,6 +50,7 @@ export default class HomePage extends Component {
             Login
           </div>
           {this.handleAuth(isAuthenticated)}
+          {this.displayFailed(failedAuth)}
         </div>
       </div>
     );

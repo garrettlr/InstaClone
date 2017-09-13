@@ -5,9 +5,9 @@ const validUser = (state) => {
   const password = state.currentPassword;
 
   const userMatch = state.users.filter( user => user.username === username );
-  if (!userMatch[0]) return state;
+  if (!userMatch[0]) return { ...state, failedAuth: true };
   const passwordMatch = userMatch.filter( user => user.password === password)[0];
-  if (!passwordMatch) return state;
+  if (!passwordMatch)  return { ...state, failedAuth: true };
 
   return {
     ...state,

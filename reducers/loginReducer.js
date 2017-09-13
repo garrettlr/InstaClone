@@ -11,6 +11,7 @@ import getPass from './authFunctions/getPass';
 
 const authDefault = {
   isAuthenticated: false,
+  failedAuth: false,
   currentUsername: '',
   currentPassword: '',
   users: [
